@@ -1,19 +1,23 @@
-module Rxloyalty
+require 'rxloyalty/client/connection'
+require 'rxloyalty/client/cards'
+require 'rxloyalty/client/orders'
 
+module Rxloyalty
   class Client
 
-    def initialize(access_token = nil)
-      @access_token = access_token || ENV['RXLOYALTY_ACCESS_TOKEN']
-    end
+    include HTTParty
+    include Rxloyalty::Client::Connection
+    include Rxloyalty::Client::Cards
+    include Rxloyalty::Client::Orders
 
-    def perform_request(path, params)
-      url = "http://testproc.cloud39.ru/BonusWebApi/api/#{path}"
-      query = { LicenseGuid: @access_token }.merge(params).to_json
-      response = HTTParty.post(url, headers: { 'Content-Type' => 'application/json' },
-                                    body: query)
-      JSON.parse(response.body)
+
+    base_uri 'http://testproc.cloud39.ru/BonusWebApi/'
+    format :json
+
+    def initialize(access_token = nil)
+      @options = { LicenseGuid: access_token || ENV['RXLOYALTY_ACCESS_TOKEN'] }
+      self.class.default_options.merge!(headers: { 'Content-Type' => 'application/json' })
     end
 
   end
-
 end

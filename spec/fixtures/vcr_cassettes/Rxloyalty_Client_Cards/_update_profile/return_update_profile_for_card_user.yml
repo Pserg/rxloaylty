@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://testproc.cloud39.ru/BonusWebApi/SiteController/SetProfileInfo?LicenseGuid=5205F9B5-2CF8-4866-AE63-BA178F40651A
+    body:
+      encoding: UTF-8
+      string: '{"LicenseGuid":"5205F9B5-2CF8-4866-AE63-BA178F40651A","ClientId":26144,"FirstName":"Some
+        name"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '1700'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      Request-Context:
+      - appId=cid-v1:f4c0833c-ceee-4363-b8e6-cfb220fb33b5
+      Access-Control-Expose-Headers:
+      - Request-Context
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Tue, 02 Jul 2019 09:32:41 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJDbGllbnRJZCI6MjYxNDQsIlRva2VuIjpudWxsLCJMYXN0TmFtZSI6bnVsbCwiRmlyc3ROYW1lIjoiU29tZSBuYW1lIiwiU3VyTmFtZSI6bnVsbCwiR2VuZGVySWQiOjMsIkN1c3RvbWVyRm9ybUdlbmRlclNlbGVjdExpc3QiOlt7IlNlbGVjdGVkIjpmYWxzZSwiVGV4dCI6ItCc0YPQttGB0LrQvtC5IiwiVmFsdWUiOiIxIn0seyJTZWxlY3RlZCI6ZmFsc2UsIlRleHQiOiLQltC10L3RgdC60LjQuSIsIlZhbHVlIjoiMiJ9LHsiU2VsZWN0ZWQiOmZhbHNlLCJUZXh0Ijoi0J3QtSDRg9C60LDQt9Cw0L0iLCJWYWx1ZSI6IjMifV0sIkJpcnRoZGF5IjpudWxsLCJQZW5zTnVtIjpudWxsLCJQaG9uZUhvbWUiOm51bGwsIlBob25lTW9iaWxlIjpudWxsLCJQaG9uZUNvbmZpcm1lZCI6ZmFsc2UsIlBob25lQ29uZmlybWVkQ29kZSI6bnVsbCwiRW1haWwiOm51bGwsIkVtYWlsQ29uZmlybWVkIjpmYWxzZSwiQ2l0eSI6bnVsbCwiU3RyZWV0IjpudWxsLCJIb3VzZSI6bnVsbCwiQXBhcnRtZW50IjpudWxsLCJBY2NlcHRTbXMiOmZhbHNlLCJBY2NlcHRFbWFpbERpc3RyaWJ1dGlvbiI6ZmFsc2UsIlZpcCI6ZmFsc2UsIklzTmV3IjpmYWxzZSwiU2F2ZWRTdWNjZXNzZnVsbHkiOmZhbHNlLCJDbGllbnRDaGVja2VkIjpmYWxzZSwiSXNSZWdpc3RlcmVkT25Qb3J0YWwiOnRydWUsIlJlZkNsaWVudElkIjpudWxsLCJSZWdTb3VyY2VJZCI6bnVsbCwiQ3VzdG9tZXJGb3JtUmVnU291cmNlTGlzdCI6W3siU2VsZWN0ZWQiOmZhbHNlLCJUZXh0Ijoi0KDQtdCz0LjRgdGC0YDQsNGG0LjRjyDQvdCwINGB0LDQudGC0LUiLCJWYWx1ZSI6IjEifSx7IlNlbGVjdGVkIjpmYWxzZSwiVGV4dCI6ItCg0LXQs9C40YHRgtGA0LDRhtC40Y8g0L3QsCDQotCiIiwiVmFsdWUiOiIyIn0seyJTZWxlY3RlZCI6ZmFsc2UsIlRleHQiOiLQoNC10LPQuNGB0YLRgNCw0YbQuNGPINCyINC80L7QsdC40LvRjNC90L7QvCDQv9GA0LjQu9C+0LbQtdC90LjQuCIsIlZhbHVlIjoiMyJ9XSwiUHJvbW9Db2RlIjpudWxsLCJIYXNBdXRvIjpmYWxzZSwiTWFycmllZCI6ZmFsc2UsIkNyZWF0aW9uRGF0ZSI6bnVsbCwiRWRpdERhdGUiOm51bGwsIkNyZWF0b3IiOm51bGwsIkVkaXRvciI6bnVsbCwiUmV2ZW51ZUxldmVsSWQiOm51bGwsIkN1c3RvbWVyRm9ybVJldmVudWVMZXZlbExpc3QiOlt7IlNlbGVjdGVkIjpmYWxzZSwiVGV4dCI6ItCd0LjQt9C60LjQuSIsIlZhbHVlIjoiMSJ9LHsiU2VsZWN0ZWQiOmZhbHNlLCJUZXh0Ijoi0KHRgNC10LTQvdC40LkiLCJWYWx1ZSI6IjIifSx7IlNlbGVjdGVkIjpmYWxzZSwiVGV4dCI6ItCS0YvRiNC1INGB0YDQtdC00L3QtdCz0L4iLCJWYWx1ZSI6IjMifSx7IlNlbGVjdGVkIjpmYWxzZSwiVGV4dCI6ItCS0YvRgdC+0LrQuNC5IiwiVmFsdWUiOiI0In1dLCJDYXJkcyI6bnVsbCwiQmFsYW5jZSI6MTcuMDAsIkNsaWVudENoaWxkcmVuSWQiOm51bGwsIkNsaWVudENoaWxkcmVuTGlzdCI6W3siU2VsZWN0ZWQiOmZhbHNlLCJUZXh0Ijoi0J3QtdGCINC00LXRgtC10LkiLCJWYWx1ZSI6IjEifSx7IlNlbGVjdGVkIjpmYWxzZSwiVGV4dCI6IjEiLCJWYWx1ZSI6IjIifSx7IlNlbGVjdGVkIjpmYWxzZSwiVGV4dCI6IjIiLCJWYWx1ZSI6IjMifSx7IlNlbGVjdGVkIjpmYWxzZSwiVGV4dCI6ItCR0L7Qu9C10LUg0LTQstGD0YUiLCJWYWx1ZSI6IjQifV0sIkFjY3VtdWxhdGVPbmx5IjpmYWxzZSwiSWRUbGdybSI6bnVsbH0=
+    http_version: 
+  recorded_at: Tue, 02 Jul 2019 09:32:40 GMT
+recorded_with: VCR 4.0.0
