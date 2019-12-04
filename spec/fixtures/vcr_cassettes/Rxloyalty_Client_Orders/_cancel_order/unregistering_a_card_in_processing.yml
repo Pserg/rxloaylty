@@ -2,25 +2,25 @@
 http_interactions:
 - request:
     method: post
-    uri: https://testac.robotx.ru/BonusWebApi/SiteController/SetProfileInfo?LicenseGuid=f61d8b6a-a93c-4730-b7de-198e50109c8a
+    uri: https://testac.robotx.ru/BonusWebApi/api/processing/cancel
     body:
       encoding: UTF-8
-      string: '{"LicenseGuid":"f61d8b6a-a93c-4730-b7de-198e50109c8a","ClientId":26144,"FirstName":"Some
-        name"}'
+      string: '{"LicenseGuid":"f61d8b6a-a93c-4730-b7de-198e50109c8a","CardCode":"2018100000088","CardRegisterDateTime":"2019-12-04
+        19:20:11","IsAdditionalCard":false,"AllowFullBonusPay":false,"RegisterDetailDtos":[{"PositionId":"1","ProductCode":"c8644e9a-7be7-11e9-0b93-e2feabc01182","TotalPrice":3000,"Quantity":6,"Properties":{}}]}'
     headers:
       Content-Type:
       - application/json
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 200
+      message: OK
     headers:
       Cache-Control:
       - no-cache
       Pragma:
       - no-cache
       Content-Length:
-      - '36'
+      - '4'
       Content-Type:
       - application/json; charset=utf-8
       Expires:
@@ -36,10 +36,10 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 04 Dec 2019 12:20:08 GMT
+      - Wed, 04 Dec 2019 12:20:12 GMT
     body:
       encoding: UTF-8
-      string: '{"Message":"An error has occurred."}'
+      string: 'true'
     http_version: 
-  recorded_at: Wed, 04 Dec 2019 12:20:08 GMT
+  recorded_at: Wed, 04 Dec 2019 12:20:12 GMT
 recorded_with: VCR 4.0.0

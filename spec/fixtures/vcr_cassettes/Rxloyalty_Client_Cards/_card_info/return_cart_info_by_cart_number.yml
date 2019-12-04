@@ -2,44 +2,44 @@
 http_interactions:
 - request:
     method: post
-    uri: http://testproc.cloud39.ru/BonusWebApi/api/siteprocessing/info
+    uri: https://testac.robotx.ru/BonusWebApi/api/siteprocessing/info
     body:
       encoding: UTF-8
-      string: '{"LicenseGuid":"5205F9B5-2CF8-4866-AE63-BA178F40651A","CardCode":"2900010000015"}'
+      string: '{"LicenseGuid":"f61d8b6a-a93c-4730-b7de-198e50109c8a","CardCode":null}'
     headers:
       Content-Type:
       - application/json
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
       Cache-Control:
       - no-cache
       Pragma:
       - no-cache
       Content-Length:
-      - '303'
+      - '133'
       Content-Type:
       - application/json; charset=utf-8
       Expires:
       - "-1"
       Server:
-      - Microsoft-IIS/8.5
+      - Microsoft-IIS/10.0
       X-Aspnet-Version:
       - 4.0.30319
       Request-Context:
-      - appId=cid-v1:f4c0833c-ceee-4363-b8e6-cfb220fb33b5
+      - appId=cid-v1:913a9151-5186-4b5f-be21-00811b06b400
       Access-Control-Expose-Headers:
       - Request-Context
       X-Powered-By:
       - ASP.NET
       Date:
-      - Mon, 01 Jul 2019 09:11:44 GMT
+      - Wed, 04 Dec 2019 12:20:08 GMT
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJDbGllbnRJZCI6MjYxNDQsIkFjb3VudElkIjowLCJMYXN0TmFtZSI6ItCg0L7QsdC+0YIiLCJGaXJzdE5hbWUiOiLQmNC60YEiLCJTdXJOYW1lIjpudWxsLCJCYWxhbmNlIjoxNy4wMCwiQWNjdW11bGF0ZU9ubHkiOmZhbHNlLCJCbG9ja2VkIjpmYWxzZSwiQWNjb3VudFR5cGUiOjEsIklzRW1haWxDb25maXJtZWQiOnRydWUsIklzUGhvbmVDb25maXJtZWQiOnRydWUsIklzUmVnaXN0ZXJlZE9uUG9ydGFsIjp0cnVlLCJDYXJkU3RhdHVzIjoi0JDQutGC0LjQstC90LAiLCJQaG9uZU1vYmlsZSI6bnVsbCwiQ2FyZENvZGUiOm51bGx9
+      encoding: UTF-8
+      string: '{"Message":"No HTTP resource was found that matches the request URI
+        ''https://testac.robotx.ru/BonusWebApi/api/siteprocessing/info''."}'
     http_version: 
-  recorded_at: Mon, 01 Jul 2019 09:11:43 GMT
+  recorded_at: Wed, 04 Dec 2019 12:20:08 GMT
 recorded_with: VCR 4.0.0
