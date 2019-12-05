@@ -2,6 +2,9 @@ require "bundler/setup"
 require "rxloyalty"
 require 'webmock/rspec'
 require 'vcr'
+require 'byebug'
+
+@card_code = '2018100000088'
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
