@@ -11,7 +11,7 @@ module Rxloyalty
     include Rxloyalty::Client::Orders
 
 
-    base_uri 'http://testproc.cloud39.ru/BonusWebApi/'
+    base_uri 'https://testac.robotx.ru/BonusWebApi/'
     format :json
 
     def initialize(access_token = nil)

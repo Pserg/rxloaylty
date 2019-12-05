@@ -5,5 +5,6 @@ gem 'rb-readline'
 gem 'rspec', '~> 3.0'
 gem 'vcr'
 gem 'webmock'
+gem 'byebug'
 
 gemspec

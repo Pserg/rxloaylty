@@ -2,12 +2,12 @@ require 'spec_helper'
 
 RSpec.describe Rxloyalty::Client::Cards, :vcr, integration: true do
 
-  subject { Rxloyalty::Client.new('5205F9B5-2CF8-4866-AE63-BA178F40651A') }
+  subject { Rxloyalty::Client.new('f61d8b6a-a93c-4730-b7de-198e50109c8a') }
 
   describe '#card_info' do
 
     it 'return cart info by cart number' do
-      response = subject.card_info('2900010000015')
+      response = subject.card_info(@qwerty)
       expect(response['CardStatus']).to eq 'Активна'
     end
 
@@ -25,7 +25,7 @@ RSpec.describe Rxloyalty::Client::Cards, :vcr, integration: true do
   describe '#disable_card_accumulate' do
 
     it 'set card accumulate to false' do
-      response = subject.disable_card_accumulate(26144, '2900010000015')
+      response = subject.disable_card_accumulate(26144, @qwerty)
       expect(response["ClientId"]).to eq 26144
     end
 
