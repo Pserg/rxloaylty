@@ -25,7 +25,7 @@ module Rxloyalty
       def request(http_method, path, options)
         @options.merge!(options)
         response = self.class.send(http_method, path, body: @options.to_json)
-        response.parsed_response
+        handle_rx_response(response)
       end
 
     end

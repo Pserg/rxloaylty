@@ -1,4 +1,5 @@
 require 'rxloyalty/client/connection'
+require 'rxloyalty/client/response'
 require 'rxloyalty/client/cards'
 require 'rxloyalty/client/orders'
 
@@ -7,6 +8,7 @@ module Rxloyalty
 
     include HTTParty
     include Rxloyalty::Client::Connection
+    include Rxloyalty::Client::Response
     include Rxloyalty::Client::Cards
     include Rxloyalty::Client::Orders
 

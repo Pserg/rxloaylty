@@ -9,15 +9,15 @@ module Rxloyalty
       end
 
       def cancel_card(card_code)
-        post '/api/siteprocessing/cancel', CardCode: card_code
+        post '/api/processing/cancel', CardCode: card_code
       end
 
       def card_info(card_code)
-        post '/api/siteprocessing/info', CardCode: card_code
+        post '/api/processing/info', CardCode: card_code
       end
 
       def register_card(card_code)
-        post '/api/siteprocessing/register', CardCode: card_code
+        post '/api/processing/register', CardCode: card_code
       end
 
       def update_profile(params)
