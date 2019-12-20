@@ -55,7 +55,7 @@ module Rxloyalty
           if value.class == Array
             new_val = []
             value.map do |arr|
-              new_arr = camelcase_sale_order(arr)
+              new_arr = camel_case(arr)
               new_val << new_arr
             end
             new[key] = new_val
