@@ -22,7 +22,7 @@ module Rxloyalty
       #     }]
 
       def register_order(card_code, card_items)
-        params = { CardCode: card_code,
+        params = { CardCode: card_code, DocumentType: 12,
                    CardRegisterDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
                    IsAdditionalCard: false, AllowFullBonusPay: false, RegisterDetailDtos: card_items }
         post '/api/processing/register', params
@@ -30,19 +30,51 @@ module Rxloyalty
 
 
       # Метод отмены заказа
+      # "DocumentType": 14
 
       def cancel_order(order_id)
-        params = { SiteOrderCode: order_id }
+        params = { SiteOrderCode: order_id, DocumentType: 14 }
         post '/api/processing/CancelOrder', params
       end
 
 
       # Метод продажи (фиксации заказа)
+      # {
+      #     "DocumentType": 13,
+      #     "DocumentCode": "dfsgafsgfsdg",
+      #     "DocumentFiscalCode": "sgfdg",
+      #     "DocumentParentCode": "",
+      #     "DocumentDateTime": "2019-12-03 15:54:42",
+      #     "SubjectCode": "",
+      #     "CashboxCode": "14",
+      #     "TotalSum": 74,
+      #     "TotalSumDiscounted": 74,
+      #     "DocumentDiscountDtos": [
+      #     {
+      #         "AccountId": 36891,
+      #         "CardCode": "2018103099010",
+      #         "SumBase": 74,
+      #         "SumDiscounted": 74,
+      #         "Discount": 0,
+      #         "Percent": 0
+      #     }
+      # ],
+      #     "DocumentDetailDtos": [
+      #     {
+      #         "ProductCode": "00001761",
+      #         "Quantity": 2,
+      #         "TotalPrice": 74,
+      #         "TotalPriceDiscounted": 74,
+      #         "MarketProgramId": 0
+      #     }
+      # ],SiteOrderCode:123
+      # }
+      # 
 
       def sale_order(order)
 
         new = camel_case(order)
-        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
+        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'), DocumentType: 13,
                    DocumentDiscountDtos: new.delete(:discount), DocumentDetailDtos: new.delete(:order_items) }.merge(new)
         post '/api/processing/sale', params
       end
