@@ -40,7 +40,7 @@ module Rxloyalty
 
       # Метод продажи (фиксации заказа)
       # {
-      #     "DocumentType": 13,
+      #     "DocumentType": 12,
       #     "DocumentCode": "dfsgafsgfsdg",
       #     "DocumentFiscalCode": "sgfdg",
       #     "DocumentParentCode": "",
@@ -69,12 +69,12 @@ module Rxloyalty
       #     }
       # ],SiteOrderCode:123
       # }
-      # 
+      #
 
       def sale_order(order)
 
         new = camel_case(order)
-        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'), DocumentType: 13,
+        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'), DocumentType: 12,
                    DocumentDiscountDtos: new.delete(:discount), DocumentDetailDtos: new.delete(:order_items) }.merge(new)
         post '/api/processing/sale', params
       end
