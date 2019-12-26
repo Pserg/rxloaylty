@@ -22,7 +22,7 @@ module Rxloyalty
       #     }]
 
       def register_order(card_code, card_items)
-        params = { CardCode: card_code, DocumentType: 12,
+        params = { CardCode: card_code,
                    CardRegisterDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
                    IsAdditionalCard: false, AllowFullBonusPay: false, RegisterDetailDtos: card_items }
         post '/api/processing/register', params
