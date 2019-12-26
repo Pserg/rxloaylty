@@ -74,7 +74,7 @@ module Rxloyalty
       def sale_order(order)
 
         new = camel_case(order)
-        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'), DocumentType: 12,
+        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
                    DocumentDiscountDtos: new.delete(:discount), DocumentDetailDtos: new.delete(:order_items) }.merge(new)
         post '/api/processing/sale', params
       end
