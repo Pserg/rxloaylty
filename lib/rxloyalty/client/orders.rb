@@ -67,7 +67,7 @@ module Rxloyalty
       #         "TotalPriceDiscounted": 74,
       #         "MarketProgramId": 0
       #     }
-      # ],SiteOrderCode:123
+      # ],SiteOrderCode: 123
       # }
       #
 

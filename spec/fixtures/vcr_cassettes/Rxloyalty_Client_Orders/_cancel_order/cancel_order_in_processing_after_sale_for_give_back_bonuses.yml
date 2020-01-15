@@ -2,11 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://testac.robotx.ru/BonusWebApi/api/processing/cancel
+    uri: https://testac.robotx.ru/BonusWebApi/api/processing/CancelOrder
     body:
       encoding: UTF-8
-      string: '{"LicenseGuid":"f61d8b6a-a93c-4730-b7de-198e50109c8a","CardCode":"2018100000088","CardRegisterDateTime":"2019-12-04
-        19:20:11","IsAdditionalCard":false,"AllowFullBonusPay":false,"RegisterDetailDtos":[{"PositionId":"1","ProductCode":"c8644e9a-7be7-11e9-0b93-e2feabc01182","TotalPrice":3000,"Quantity":6,"Properties":{}}]}'
+      string: '{"LicenseGuid":"f61d8b6a-a93c-4730-b7de-198e50109c8a","SiteOrderCode":523122,"DocumentType":14}'
     headers:
       Content-Type:
       - application/json
@@ -20,7 +19,7 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '4'
+      - '203'
       Content-Type:
       - application/json; charset=utf-8
       Expires:
@@ -36,10 +35,10 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 04 Dec 2019 12:20:12 GMT
+      - Mon, 13 Jan 2020 12:29:59 GMT
     body:
       encoding: UTF-8
-      string: 'true'
+      string: '{"SaleDiscountResponseDtos":[{"AccountId":0,"CardCode":null,"AccountTypeId":0,"AddBonus":0.0,"RemoveBonus":0.0,"Balance":30.00,"ClientStatus":null}],"DocDetails":null,"ClientChipInfo":null,"Footer":null}'
     http_version: 
-  recorded_at: Wed, 04 Dec 2019 12:20:12 GMT
+  recorded_at: Mon, 13 Jan 2020 12:29:59 GMT
 recorded_with: VCR 4.0.0

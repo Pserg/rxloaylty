@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://testac.robotx.ru/BonusWebApi/api/processing/register
+    body:
+      encoding: UTF-8
+      string: '{"LicenseGuid":"f61d8b6a-a93c-4730-b7de-198e50109c8a","CardCode":"2018100000088","CardRegisterDateTime":"2020-01-14
+        09:42:24","IsAdditionalCard":false,"AllowFullBonusPay":false,"RegisterDetailDtos":[{"PositionId":"1","ProductCode":"c8644e9a-7be7-11e9-0b93-e2feabc01182","TotalPrice":3000,"Quantity":6,"Properties":{}}]}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '757'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Tue, 14 Jan 2020 02:42:43 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJBY2Nlc3NUb2tlbkd1aWQiOiJiZjgyYjc5NS1jOGU4LTQyOTItYmNmMS02MDYzZGE1ZDYwZmEiLCJBY2NvdW50SWQiOjM1ODQ4LCJDYXJkQ29kZSI6IjIwMTgxMDAwMDAwODgiLCJMYXN0TmFtZSI6ItCj0YXQsCIsIkZpcnN0TmFtZSI6ItCU0LzQuCIsIlN1ck5hbWUiOm51bGwsIkJhbGFuY2UiOjAuMDAsIlBlcmNlbnQiOjAuMCwiVXNlUGVyY2VudCI6ZmFsc2UsIkFjY3VtdWxhdGVPbmx5Ijp0cnVlLCJBY2NvdW50VHlwZUlkIjoxLCJCb251c0JhbGFuY2UiOjAuMDAsIklzRW1haWxDb25maXJtZWQiOmZhbHNlLCJJc1Bob25lQ29uZmlybWVkIjpmYWxzZSwiSXNSZWdpc3RlcmVkT25Qb3J0YWwiOmZhbHNlLCJNZXNzYWdlIjoiIiwiUHJpbnRGb290ZXIiOmZhbHNlLCJQcm9tb0NvZGUiOm51bGwsIkNhcmRSZWdpc3RlckRhdGVUaW1lIjoiMjAyMC0wMS0xNFQwOTo0MjoyNCIsIlJlZ2lzdGVyRGV0YWlsUmVzcG9uc2VEdG9zIjpbeyJQb3NpdGlvbklkIjoiMSIsIkRpc2NvdW50IjozMDAwLjAsIlVzZVBlcmNlbnQiOmZhbHNlLCJDYW5TcGVuZEJvbnVzIjp0cnVlLCJTcGVjaWFsUHJpY2UiOjAuMCwiU3BlY2lhbFByaWNlUXVhbnRpdHkiOjAuMCwiRW5kUHJpY2UiOjAuMCwiTWFya2V0UHJvZ3JhbUlkIjowLCJNYXJrZXRQcm9ncmFtSXNGb3JjZWQiOmZhbHNlLCJBbHRlcm5hdGl2ZURpc2NvdW50RHRvcyI6W119XSwiQ2xpZW50R2lmdHMiOltdLCJBbHRlcm5hdGl2ZURpc2NvdW50RHRvcyI6W10sIkNsaWVudENoaXBzSW5mb3MiOltdfQ==
+    http_version: 
+  recorded_at: Tue, 14 Jan 2020 02:42:42 GMT
+recorded_with: VCR 4.0.0

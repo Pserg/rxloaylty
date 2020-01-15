@@ -5,18 +5,25 @@ module Rxloyalty
     module Response
 
       def handle_rx_response(response)
-        convert(response).merge(code: response.code, success: response.success?)
+        convert(response.parsed_response)
+          .merge(code: response.code, success: response.success?)
       end
 
       private
 
       def convert(response)
-        symbolize_recursive(response)
+        if response.is_a?(Hash)
+          symbolize_recursive(response)
+        else
+          { data: response.map { |v| map_value(v) } }
+        end
       end
 
       def symbolize_recursive(hash)
         {}.tap do |h|
-          hash.each { |key, value| h[key.snakecase.to_sym] = map_value(value) }
+          hash.each do |key, value|
+            h[snake_case(key).to_sym] = map_value(value)
+          end
         end
       end
 
@@ -29,6 +36,16 @@ module Rxloyalty
         else
           thing
         end
+      end
+
+      def snake_case(camel_cased_word)
+        return camel_cased_word unless /[A-Z-]|::/.match?(camel_cased_word)
+
+        camel_cased_word.gsub(/::/, '/')
+                        .gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2')
+                        .gsub(/([a-z\d])([A-Z])/,'\1_\2')
+                        .tr('-', '_')
+                        .downcase
       end
 
     end
