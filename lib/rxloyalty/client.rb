@@ -15,10 +15,6 @@ module Rxloyalty
 
     format :json
 
-    def self.assign_base_uri(url)
-      base_uri url
-    end
-
     def initialize(access_token = nil)
       @options = { LicenseGuid: access_token || ENV['RXLOYALTY_ACCESS_TOKEN'] }
       self.class.default_options.merge!(headers: { 'Content-Type' => 'application/json' })
