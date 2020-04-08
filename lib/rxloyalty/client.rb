@@ -13,10 +13,10 @@ module Rxloyalty
     include Rxloyalty::Client::Orders
 
 
-    base_uri ENV['RXLOYALTY_URI']
     format :json
 
-    def initialize(access_token = nil)
+    def initialize(access_token = nil, base_uri = nil)
+      base_uri base_uri || ENV['RXLOYALTY_URI']
       @options = { LicenseGuid: access_token || ENV['RXLOYALTY_ACCESS_TOKEN'] }
       self.class.default_options.merge!(headers: { 'Content-Type' => 'application/json' })
     end
