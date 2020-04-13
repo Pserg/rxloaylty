@@ -6,5 +6,6 @@ gem 'rspec', '~> 3.0'
 gem 'vcr'
 gem 'webmock'
 gem 'byebug'
+gem 'rake', '~> 12.3.3'
 
 gemspec
