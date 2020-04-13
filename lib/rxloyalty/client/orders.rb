@@ -81,26 +81,6 @@ module Rxloyalty
         post '/api/processing/sale', params
       end
 
-      private
-
-      def camel_case(order)
-        new = {}
-        order.each do |key, value|
-          if value.class == Array
-            new_val = []
-            value.map do |arr|
-              new_arr = camel_case(arr)
-              new_val << new_arr
-            end
-            new[key] = new_val
-          else
-            new_key = key.to_s.tr('_', ' ').split.map(&:capitalize).join.to_sym
-            new[new_key] = value
-          end
-        end
-        new
-      end
-
     end
 
   end
