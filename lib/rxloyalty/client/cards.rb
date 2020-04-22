@@ -20,6 +20,10 @@ module Rxloyalty
         post '/api/processing/register', CardCode: card_code
       end
 
+      def personal_discounts(card_code)
+        post '/SiteController/PersonalDiscount', CardCode: card_code
+      end
+
     end
   end
 end
