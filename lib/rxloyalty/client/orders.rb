@@ -76,9 +76,30 @@ module Rxloyalty
         new = camel_case(order)
         params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
                    ProcV2: true,
+                   DocumentType: 12,
                    DocumentDiscountDtos: new.delete(:discount),
                    DocumentDetailDtos: new.delete(:order_items) }.merge(new)
         post '/api/processing/sale', params
+      end
+
+      # Finalize order
+      # { "DocumentType":1,"DocumentCode":"2079","DocumentFiscalCode":"2079","DocumentParentCode":"",
+      # "DocumentDateTime":"2020-04-09 12:15:02","SubjectCode":"",
+      # "CashboxCode":"1","TotalSum":1209,"TotalSumDiscounted":1209,
+      # "DocumentDiscountDtos":[{"AccountId":35851,"CardCode":"2018100000001","SumBase":1209,"SumDiscounted":1209,
+      # "Discount":0,"Percent":0}],"DocumentDetailDtos":[{"ProductCode":"0000010593",
+      # "Quantity":11,"TotalPrice":1199,"TotalPriceDiscounted":1199,"MarketProgramId":0},
+      # {"ProductCode":"0000014875","Quantity":1,"TotalPrice":10,"TotalPriceDiscounted":10,"MarketProgramId":0}],
+      # "SiteOrderCode":"185"}
+
+      def finalize_order(order)
+        new = camel_case(order)
+        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
+                   ProcV2: true,
+                   DocumentType: 1,
+                   DocumentDiscountDtos: new.delete(:discount),
+                   DocumentDetailDtos: new.delete(:order_items) }.merge(new)
+        post '/api/processing/processing_postsale', params
       end
 
     end
