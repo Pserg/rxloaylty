@@ -72,14 +72,7 @@ module Rxloyalty
       #
 
       def sale_order(order)
-
-        new = camel_case(order)
-        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
-                   ProcV2: true,
-                   DocumentType: 12,
-                   DocumentDiscountDtos: new.delete(:discount),
-                   DocumentDetailDtos: new.delete(:order_items) }.merge(new)
-        post '/api/processing/sale', params
+        post '/api/processing/sale', order_params(order, 12)
       end
 
       # Finalize order
@@ -93,13 +86,18 @@ module Rxloyalty
       # "SiteOrderCode":"185"}
 
       def finalize_order(order)
+        post '/api/processing/sale', order_params(order, 1)
+      end
+
+      private
+
+      def order_params(order, document_type)
         new = camel_case(order)
-        params = { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
-                   ProcV2: true,
-                   DocumentType: 1,
-                   DocumentDiscountDtos: new.delete(:discount),
-                   DocumentDetailDtos: new.delete(:order_items) }.merge(new)
-        post '/api/processing/processing_postsale', params
+        { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
+          ProcV2: true,
+          DocumentType: document_type,
+          DocumentDiscountDtos: new.delete(:discount),
+          DocumentDetailDtos: new.delete(:order_items) }.merge(new)
       end
 
     end
