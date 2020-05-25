@@ -12,8 +12,10 @@ module Rxloyalty
         post '/api/processing/cancel', CardCode: card_code
       end
 
-      def card_info(card_code, convert = true)
-        post '/api/processing/info', { CardCode: card_code }, convert
+      def card_info(params, convert = true)
+        post '/api/processing/info', { CardCode: params[:card_code],
+                                       Email: params[:email],
+                                       MobilePhone: params[:phone]}, convert
       end
 
       def register_card(card_code)
