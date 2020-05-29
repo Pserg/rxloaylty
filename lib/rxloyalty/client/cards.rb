@@ -3,7 +3,7 @@ module Rxloyalty
     module Cards
 
       def disable_card_accumulate(card_code:)
-        params = card_info(card_code, false)
+        params = card_info({CardCode: card_code}, false)
         post "/SiteController/SetProfileInfo?LicenseGuid=#{@options[:LicenseGuid]}",
              handle_update_params(params)
       end
