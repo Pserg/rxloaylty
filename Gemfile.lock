@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rxloyalty (0.2.18)
+    rxloyalty (0.3.1)
       httparty
 
 GEM
