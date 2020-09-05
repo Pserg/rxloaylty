@@ -33,7 +33,7 @@ module Rxloyalty
             new_arr = camel_case(arr)
             new_val << new_arr
           end
-          new[key] = new_val
+          new[key.to_s.tr('_', ' ').split.map(&:capitalize).join.to_sym] = new_val
         else
           new_key = key.to_s.tr('_', ' ').split.map(&:capitalize).join.to_sym
           new[new_key] = value
