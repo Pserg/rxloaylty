@@ -96,8 +96,8 @@ module Rxloyalty
         { DocumentDateTime: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
           ProcV2: true,
           DocumentType: document_type,
-          DocumentDiscountDtos: new.delete(:discount),
-          DocumentDetailDtos: new.delete(:order_items) }.merge(new)
+          DocumentDiscountDtos: new.delete(:Discount),
+          DocumentDetailDtos: new.delete(:OrderItems) }.merge(new)
       end
 
     end
