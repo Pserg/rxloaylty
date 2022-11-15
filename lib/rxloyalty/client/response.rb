@@ -12,6 +12,8 @@ module Rxloyalty
       private
 
       def convert(response)
+        return {} if response.blank?
+
         if response.is_a?(Hash)
           symbolize_recursive(response)
         else
